@@ -1,10 +1,9 @@
 package ch.gibb;
 
-public class Rechteck {
+public class Rechteck extends Figur {
 
-int positionX;
-int positionY;
+
 int breite;
-int höhe;
+int hoehe;
 
 }

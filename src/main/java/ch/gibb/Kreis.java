@@ -1,8 +1,7 @@
 package ch.gibb;
 
-public class Kreis {
+public class Kreis extends Figur {
 
-    int positionX;
-    int positionY;
+
     int radius;
 }

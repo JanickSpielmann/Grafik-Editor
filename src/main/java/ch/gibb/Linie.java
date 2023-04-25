@@ -1,9 +1,6 @@
 package ch.gibb;
 
-public class Linie {
-
-    int positionX;
-    int positionY;
+public class Linie extends Figur {
     int endpunktX;
     int endpunktY;
 }
