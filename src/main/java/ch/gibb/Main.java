@@ -5,6 +5,8 @@ import ch.gibb.formen.Linie;
 import ch.gibb.formen.Rechteck;
 
 public class Main {
+
+    private static final Display display = new Display();
     public static void main(String[] args) {
 
         Rechteck rechteck = new Rechteck(10,10,200,300);
@@ -13,5 +15,6 @@ public class Main {
         Linie linie2 = new Linie(90,80,70,50);
         Kreis kreis = new Kreis(50,50,25);
         Kreis kreis2 = new Kreis(60,60,80);
+
     }
 }
