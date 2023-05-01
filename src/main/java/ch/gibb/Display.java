@@ -1,13 +1,8 @@
 package ch.gibb;
 
-import ch.gibb.formen.Figur;
-import ch.gibb.formen.Kreis;
-import ch.gibb.formen.Rechteck;
+import ch.gibb.formen.*;
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Point;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,10 +44,11 @@ public class Display extends JFrame {
         add(new JPanel() {
             // Die paintComponent()-Methode wird automatisch aufgerufen, wenn irgendwer die repaint()-
             // Methode beim Dsiplay aufruft.
+
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                zeichneFiguren(g);
+                zeichneFiguren((Graphics2D)g);
             }
         });
     }
@@ -61,19 +57,38 @@ public class Display extends JFrame {
      * Zeichnet alle Figuren.
      * @param g Referenz auf das Graphics-Objekt zum zeichnen.
      */
-    private void zeichneFiguren(Graphics g) {
+    private void zeichneFiguren(Graphics2D g) {
         for (Figur f : figuren) {
-            if (f instanceof Rechteck) {
-                Rechteck r = (Rechteck)f;
-                g.drawRect(r.getX(), r.getY(), r.getBreite(), r.getHoehe());
-            }else if (f instanceof Kreis){
 
+            g.setColor(f.getFuellFarbe());
+
+            if (f instanceof Rechteck) {
+                Rechteck rechteck = (Rechteck)f;
+                g.fillRect(rechteck.getPositionX(), rechteck.getPositionY(), rechteck.getBreite(), rechteck.getHoehe());
+            }else if (f instanceof Kreis){
+                Kreis kreis = (Kreis)f;
+                g.drawOval(kreis.getPositionX(),kreis.getPositionY(),kreis.getRadius(),kreis.getRadius());
+            }else if(f instanceof Linie){
+                Linie linie = (Linie) f;
+                g.drawLine(linie.getPositionX(),linie.getPositionY(),linie.getEndpunktX(),linie.getEndpunktY());
+            }else if(f instanceof Elipse){
+                Elipse elipse = (Elipse) f;
+                g.drawOval(elipse.getPositionX(),elipse.getPositionY(),elipse.getHoehe(),elipse.getBreite());
+            }else if(f instanceof Bogen){
+                Bogen bogen = (Bogen) f;
+                g.drawArc(bogen.getPositionX(),bogen.getPositionY(),bogen.getHoehe(),bogen.getBreite(),bogen.getStartWinkel(),bogen.getWinkel());
+            }else if(f instanceof Text){
+                Text text = (Text) f;
+                g.drawString(text.getText(),text.getPositionX(),text.getPositionY());
             }
             /* TODO: Hier muss f�r jede weitere Figur-Klasse, welche dargestellt werden k�nnen muss,
              * ein analoger Abschnitt, wie f�r die Rechteck-Klasse folgen.
              */
         }
     }
+
+
+
 
     /**
      * F�gt eine weitere Figur hinzu und l�st die Auffrischung des Fensterinhaltes aus.
