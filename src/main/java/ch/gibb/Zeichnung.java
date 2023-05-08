@@ -2,7 +2,6 @@ package ch.gibb;
 
 import ch.gibb.formen.Figur;
 
-import javax.swing.*;
 import java.awt.*;
 
 public class Zeichnung{
@@ -37,8 +36,9 @@ public class Zeichnung{
     }
 
 
-    public void allesLoeschen() {
+    public void allesLoeschen(Display display) {
         figuren = new Figur[]{};
+        display.repaint();
     }
 
 }
