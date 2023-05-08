@@ -23,4 +23,11 @@ public class Gruppe {
         figuren.remove(position);
     }
 
+    public ArrayList<Figur> getFiguren() {
+        return figuren;
+    }
+
+    public void setFiguren(ArrayList<Figur> figuren) {
+        this.figuren = figuren;
+    }
 }

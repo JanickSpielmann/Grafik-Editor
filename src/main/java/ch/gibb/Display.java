@@ -19,13 +19,15 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class Display extends JFrame {
     /** Die Liste der dargestellten Figur-Objekte */
-    private List<Figur> figuren = new ArrayList<Figur>();
+
+    private Zeichnung zeichnung;
 
     /**
      * Konstruktor. Initialisiert das Fenster in der Mitte des Bildschirms und erzeugt ein
      * JFrame-Objekt, auf welchem die Figuren gezeichnet werden.
      */
     public Display() {
+        this.zeichnung= new Zeichnung(new Figur[]{});
         Dimension windowSize = new Dimension(800, 600);
         setSize(windowSize);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -38,6 +40,10 @@ public class Display extends JFrame {
         setVisible(true);
     }
 
+    public void setZeichnung(Zeichnung zeichnung) {
+        this.zeichnung = zeichnung;
+    }
+
     private void createAndAddDrawingPanel() {
         // Das JPanel-Objekt ist ein Objekt einer anonymen Unterklasse von JPanel
         // Siehe Java-Grundkurs Abschnitt 3.9
@@ -48,63 +54,10 @@ public class Display extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                zeichneFiguren((Graphics2D)g);
+                zeichnung.zeichneFiguren(g);
             }
         });
     }
 
-    /**
-     * Zeichnet alle Figuren.
-     * @param g Referenz auf das Graphics-Objekt zum zeichnen.
-     */
-    private void zeichneFiguren(Graphics2D g) {
-        for (Figur f : figuren) {
-
-            g.setColor(f.getFuellFarbe());
-
-            if (f instanceof Rechteck) {
-                Rechteck rechteck = (Rechteck)f;
-                g.fillRect(rechteck.getPositionX(), rechteck.getPositionY(), rechteck.getBreite(), rechteck.getHoehe());
-            }else if (f instanceof Kreis){
-                Kreis kreis = (Kreis)f;
-                g.drawOval(kreis.getPositionX(),kreis.getPositionY(),kreis.getRadius(),kreis.getRadius());
-            }else if(f instanceof Linie){
-                Linie linie = (Linie) f;
-                g.drawLine(linie.getPositionX(),linie.getPositionY(),linie.getEndpunktX(),linie.getEndpunktY());
-            }else if(f instanceof Elipse){
-                Elipse elipse = (Elipse) f;
-                g.drawOval(elipse.getPositionX(),elipse.getPositionY(),elipse.getHoehe(),elipse.getBreite());
-            }else if(f instanceof Bogen){
-                Bogen bogen = (Bogen) f;
-                g.drawArc(bogen.getPositionX(),bogen.getPositionY(),bogen.getHoehe(),bogen.getBreite(),bogen.getStartWinkel(),bogen.getWinkel());
-            }else if(f instanceof Text){
-                Text text = (Text) f;
-                g.drawString(text.getText(),text.getPositionX(),text.getPositionY());
-            }
-            /* TODO: Hier muss f�r jede weitere Figur-Klasse, welche dargestellt werden k�nnen muss,
-             * ein analoger Abschnitt, wie f�r die Rechteck-Klasse folgen.
-             */
-        }
-    }
-
-
-
-
-    /**
-     * F�gt eine weitere Figur hinzu und l�st die Auffrischung des Fensterinhaltes aus.
-     * @param figur Referenz auf das weitere Figur-Objekt.
-     */
-    public void hinzufuegen(Figur figur) {
-        figuren.add(figur);
-        repaint();
-    }
-
-    /**
-     * L�scht alle Figuren und l�st die Auffrischung des Fensterinhaltes aus.
-     */
-    public void allesLoeschen() {
-        figuren.clear();
-        repaint();
-    }
 }
 

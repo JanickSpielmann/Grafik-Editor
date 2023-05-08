@@ -1,5 +1,7 @@
 package ch.gibb.formen;
 
+import java.awt.*;
+
 public class Linie extends Figur {
     private int endpunktX;
     private int endpunktY;
@@ -24,5 +26,10 @@ public class Linie extends Figur {
 
     public void setEndpunktY(int endpunktY) {
         this.endpunktY = endpunktY;
+    }
+
+    @Override
+    public void zeichne(Graphics g) {
+        g.drawLine(positionX,positionY,endpunktX,endpunktY);
     }
 }

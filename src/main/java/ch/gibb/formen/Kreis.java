@@ -1,5 +1,7 @@
 package ch.gibb.formen;
 
+import java.awt.*;
+
 public class Kreis extends Figur {
 
 
@@ -16,5 +18,9 @@ public class Kreis extends Figur {
 
     public void setRadius(int radius) {
         this.radius = radius;
+    }
+    @Override
+    public void zeichne(Graphics g) {
+        g.drawOval(positionX,positionY,radius,radius);
     }
 }

@@ -2,7 +2,7 @@ package ch.gibb.formen;
 
 import java.awt.*;
 
-public class Figur {
+public abstract class Figur {
     protected int positionX;
     protected int positionY;
 
@@ -79,6 +79,7 @@ public class Figur {
     public void setStyle(int style) {
         this.style = style;
     }
+    public abstract void zeichne(Graphics g);
 }
 
 

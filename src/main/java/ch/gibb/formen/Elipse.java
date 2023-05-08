@@ -1,5 +1,7 @@
 package ch.gibb.formen;
 
+import java.awt.*;
+
 public class Elipse extends Figur {
 
 
@@ -26,5 +28,9 @@ public class Elipse extends Figur {
 
     public void setHoehe(int hoehe) {
         this.hoehe = hoehe;
+    }
+    @Override
+    public void zeichne(Graphics g) {
+        g.drawOval(positionX,positionY,breite,hoehe);
     }
 }

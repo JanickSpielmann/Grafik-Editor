@@ -1,5 +1,7 @@
 package ch.gibb.formen;
 
+import java.awt.*;
+
 public class Bogen extends Figur {
 
 
@@ -47,5 +49,9 @@ public class Bogen extends Figur {
 
     public void setWinkel(int winkel) {
         this.winkel = winkel;
+    }
+    @Override
+    public void zeichne(Graphics g) {
+        g.drawArc(positionX,positionY,breite,hoehe,startWinkel,winkel);
     }
 }

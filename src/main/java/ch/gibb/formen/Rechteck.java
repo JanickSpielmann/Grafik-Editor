@@ -5,8 +5,8 @@ import java.awt.*;
 public class Rechteck extends Figur {
 
 
-    private int breite;
-    private int hoehe;
+    protected int breite;
+    protected int hoehe;
 
     public Rechteck(int positionX, int positionY, int breite, int hoehe) {
         super(positionX, positionY);
@@ -34,5 +34,10 @@ public class Rechteck extends Figur {
 
     public void setHoehe(int hoehe) {
         this.hoehe = hoehe;
+    }
+
+    @Override
+    public void zeichne(Graphics g) {
+        g.drawRect(positionX,positionY,breite,hoehe);
     }
 }

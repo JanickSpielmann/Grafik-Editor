@@ -1,5 +1,7 @@
 package ch.gibb.formen;
 
+import java.awt.*;
+
 public class Text extends Figur{
 
     private String text;
@@ -15,5 +17,9 @@ public class Text extends Figur{
 
     public void setText(String text) {
         this.text = text;
+    }
+    @Override
+    public void zeichne(Graphics g) {
+        g.drawString(text,positionX,positionY);
     }
 }
