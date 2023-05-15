@@ -8,17 +8,20 @@ public class Rechteck extends Figur {
     protected int breite;
     protected int hoehe;
 
-    public Rechteck(int positionX, int positionY, int breite, int hoehe) {
-        super(positionX, positionY);
-        this.breite = breite;
-        this.hoehe = hoehe;
-    }
 
-    public Rechteck(int positionX, int positionY, Color linienFarbe, Color fullFarbe, int linienDicke, int style, int breite, int hoehe) {
-        super(positionX, positionY, linienFarbe, fullFarbe, linienDicke, style);
-        this.breite = breite;
-        this.hoehe = hoehe;
-    }
+        public Rechteck(int positionX, int positionY, int breite, int hoehe) {
+            super(positionX, positionY);
+            this.breite = breite;
+            this.hoehe = hoehe;
+        }
+
+
+
+        public Rechteck(int positionX, int positionY, Color linienFarbe, Color fullFarbe, int linienDicke, int style, int breite, int hoehe) {
+            super(positionX, positionY, linienFarbe, fullFarbe, linienDicke, style);
+            this.breite = breite;
+            this.hoehe = hoehe;
+        }
 
     public int getBreite() {
         return breite;

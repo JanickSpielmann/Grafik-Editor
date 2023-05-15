@@ -12,6 +12,10 @@ public class Zeichnung{
         this.figuren = figuren;
     }
 
+    public Zeichnung(){
+        this.figuren = new Figur[]{};
+    }
+
     public void zeichneFiguren(Graphics g){
         for (Figur f: figuren){
             f.zeichne(g);
