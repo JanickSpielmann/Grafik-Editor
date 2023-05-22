@@ -25,6 +25,6 @@ public class Kreis extends Figur {
     }
     @Override
     public void zeichne(Graphics g) {
-        g.drawOval(positionX,positionY,radius,radius);
+        g.drawOval(positionX-radius,positionY-radius,radius*2,radius*2);
     }
 }

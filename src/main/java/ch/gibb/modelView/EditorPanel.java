@@ -4,7 +4,9 @@ package ch.gibb.modelView;
 import java.awt.Graphics;
 
 
+
 import javax.swing.JPanel;
+import javax.swing.text.JTextComponent;
 
 
 @SuppressWarnings("serial")
@@ -12,8 +14,11 @@ final class EditorPanel extends JPanel {
     private EditorControl editorControl;
 
     EditorPanel(EditorControl editorControl) {
-        addMouseListener(new EditorMouseAdapter(editorControl));
         this.editorControl = editorControl;
+        addMouseListener(new MouseAdapter(editorControl,this));
+        setFocusable(true);
+        addKeyListener(new KeyAdapter(editorControl));
+
     }
 
     // Die paintComponent()-Methode wird automatisch aufgerufen, wenn irgendwer die repaint()-

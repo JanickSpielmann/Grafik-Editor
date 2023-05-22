@@ -3,17 +3,18 @@ package ch.gibb;
 import ch.gibb.formen.Figur;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Zeichnung{
 
-    private Figur[] figuren;
+    private ArrayList<Figur> figuren;
 
-    public Zeichnung(Figur[] figuren) {
+    public Zeichnung(ArrayList <Figur> figuren) {
         this.figuren = figuren;
     }
 
     public Zeichnung(){
-        this.figuren = new Figur[]{};
+        this.figuren = new ArrayList<>();
     }
 
     public void zeichneFiguren(Graphics g){
@@ -26,23 +27,13 @@ public class Zeichnung{
     }
     public void hinzufuegen(Figur figur){
 
-        //  New array with 1 size increase
-        Figur[] figurenNew = new Figur[this.figuren.length+1];
-        // Copy everything from the old array into the new longer one
-        for (int i = 0; i < this.figuren.length; i++) {
-            figurenNew[i] = this.figuren[i];
-        }
-        //adding the new person on the last field from the array
-        figurenNew[figurenNew.length-1] = figur;
-        //replacing the instance array with the new one.
-        this.figuren = figurenNew;
+        figuren.add(figur);
 
     }
 
 
-    public void allesLoeschen(Display display) {
-        figuren = new Figur[]{};
-        display.repaint();
+    public void allesLoeschen() {
+        figuren.removeAll(figuren);
     }
 
 }
