@@ -5,7 +5,8 @@ import ch.gibb.formen.Kreis;
 import ch.gibb.formen.Linie;
 import ch.gibb.formen.Rechteck;
 
-import java.awt.*;
+import java.awt.Graphics;
+import java.awt.Point;
 
 final class EditorControl {
     private Zeichnung zeichnung = new Zeichnung();
@@ -13,7 +14,7 @@ final class EditorControl {
     private Point ersterPunkt;
 
     public void allesNeuZeichnen(Graphics g) {
-        zeichnung.zeichneFiguren(g);
+        //TODO: Erg�nzen
     }
 
     public void setFigurTyp(char figurTyp) {
@@ -26,12 +27,15 @@ final class EditorControl {
 
     public void erzeugeFigurMitZweitemPunkt(Point zweiterPunkt) {
 
-        switch (figurTyp){
-            case 'r': zeichnung.hinzufuegen(new Rechteck(ersterPunkt, zweiterPunkt));
-            case 'l':zeichnung.hinzufuegen(new Linie(ersterPunkt, zweiterPunkt));
-            case 'k':zeichnung.hinzufuegen(new Kreis(ersterPunkt, zweiterPunkt));
-            default: zeichnung.hinzufuegen(new Rechteck(ersterPunkt, zweiterPunkt));
+        switch (figurTyp) {
+            case 'r':
+                zeichnung.hinzufuegen(new Rechteck(ersterPunkt, zweiterPunkt));
+            case 'l':
+                zeichnung.hinzufuegen(new Linie(ersterPunkt, zweiterPunkt));
+            case 'k':
+                zeichnung.hinzufuegen(new Kreis(ersterPunkt, zweiterPunkt));
+            default:
+                zeichnung.hinzufuegen(new Linie(ersterPunkt, zweiterPunkt));
         }
-
     }
 }
