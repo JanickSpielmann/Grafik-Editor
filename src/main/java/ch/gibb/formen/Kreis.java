@@ -7,6 +7,10 @@ public class Kreis extends Figur {
 
     private int radius;
 
+    public Kreis(Point ersterPunkt, Point zweiterPunkt){
+        super(ersterPunkt);
+        radius = (int) ersterPunkt.distance(zweiterPunkt);
+    }
     public Kreis(int positionX, int positionY, int radius) {
         super(positionX, positionY);
         this.radius = radius;

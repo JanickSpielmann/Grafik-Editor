@@ -13,6 +13,14 @@ public abstract class Figur {
     protected int linienDicke;
     protected int style;
 
+    public Figur(Point ersterPunkt){
+        this.positionX = ersterPunkt.x;
+        this.positionY = ersterPunkt.y;
+        this.linienFarbe = Color.black;
+        this.fullFarbe = Color.white;
+        this.linienDicke = 1;
+        this.style = 1;
+    }
 
     public Figur(int positionX, int positionY) {
         this.positionX = positionX;

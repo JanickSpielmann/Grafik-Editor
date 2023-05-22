@@ -9,19 +9,25 @@ public class Rechteck extends Figur {
     protected int hoehe;
 
 
-        public Rechteck(int positionX, int positionY, int breite, int hoehe) {
-            super(positionX, positionY);
-            this.breite = breite;
-            this.hoehe = hoehe;
-        }
+    public Rechteck(Point ersterPunkt, Point zweiterPunkt) {
+        super(ersterPunkt);
+        this.breite = Math.abs(ersterPunkt.x - zweiterPunkt.x);
+        this.hoehe = Math.abs(ersterPunkt.y - zweiterPunkt.y);
+
+    }
+
+    public Rechteck(int positionX, int positionY, int breite, int hoehe) {
+        super(positionX, positionY);
+        this.breite = breite;
+        this.hoehe = hoehe;
+    }
 
 
-
-        public Rechteck(int positionX, int positionY, Color linienFarbe, Color fullFarbe, int linienDicke, int style, int breite, int hoehe) {
-            super(positionX, positionY, linienFarbe, fullFarbe, linienDicke, style);
-            this.breite = breite;
-            this.hoehe = hoehe;
-        }
+    public Rechteck(int positionX, int positionY, Color linienFarbe, Color fullFarbe, int linienDicke, int style, int breite, int hoehe) {
+        super(positionX, positionY, linienFarbe, fullFarbe, linienDicke, style);
+        this.breite = breite;
+        this.hoehe = hoehe;
+    }
 
     public int getBreite() {
         return breite;
@@ -41,6 +47,6 @@ public class Rechteck extends Figur {
 
     @Override
     public void zeichne(Graphics g) {
-        g.drawRect(positionX,positionY,breite,hoehe);
+        g.drawRect(positionX, positionY, breite, hoehe);
     }
 }

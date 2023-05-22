@@ -1,6 +1,8 @@
 package ch.gibb.modelView;
 
 import ch.gibb.Zeichnung;
+import ch.gibb.formen.Kreis;
+import ch.gibb.formen.Linie;
 import ch.gibb.formen.Rechteck;
 
 import java.awt.*;
@@ -11,7 +13,7 @@ final class EditorControl {
     private Point ersterPunkt;
 
     public void allesNeuZeichnen(Graphics g) {
-        //TODO: Erg�nzen
+        zeichnung.zeichneFiguren(g);
     }
 
     public void setFigurTyp(char figurTyp) {
@@ -25,11 +27,11 @@ final class EditorControl {
     public void erzeugeFigurMitZweitemPunkt(Point zweiterPunkt) {
 
         switch (figurTyp){
-            case 'r': zeichnung.hinzufuegen(new Rechteck(ersterPunkt.x,ersterPunkt.y, zweiterPunkt.x, zweiterPunkt.y));
-            default: zeichnung.hinzufuegen(new Rechteck(ersterPunkt.x,ersterPunkt.y, zweiterPunkt.x, zweiterPunkt.y));
+            case 'r': zeichnung.hinzufuegen(new Rechteck(ersterPunkt, zweiterPunkt));
+            case 'l':zeichnung.hinzufuegen(new Linie(ersterPunkt, zweiterPunkt));
+            case 'k':zeichnung.hinzufuegen(new Kreis(ersterPunkt, zweiterPunkt));
+            default: zeichnung.hinzufuegen(new Rechteck(ersterPunkt, zweiterPunkt));
         }
-
-
 
     }
 }
