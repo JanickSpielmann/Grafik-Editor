@@ -7,12 +7,12 @@ import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-final class EditorPanel extends JPanel implements MouseListener {
+final class EditorPanel extends JPanel {
   private EditorControl editorControl;
 
   EditorPanel(EditorControl control) {
     editorControl = control;
-    addMouseListener(this);
+    addMouseListener(new EditorMouseAdapter());
   }
 
   // Die paintComponent()-Methode wird automatisch aufgerufen, wenn irgendwer die repaint()-
@@ -22,29 +22,6 @@ final class EditorPanel extends JPanel implements MouseListener {
     super.paintComponent(g);
     editorControl.allesNeuZeichnen(g);
   }
-
-  @Override
-  public void mouseClicked(MouseEvent e) {
-
-  }
-
-  @Override
-  public void mousePressed(MouseEvent e) {
-    System.out.println(e.getPoint());
-  }
-
-  @Override
-  public void mouseReleased(MouseEvent e) {
-    System.out.println(e.getPoint());
-  }
-
-  @Override
-  public void mouseEntered(MouseEvent e) {
-
-  }
-
-  @Override
-  public void mouseExited(MouseEvent e) {
-
-  }
 }
+
+
