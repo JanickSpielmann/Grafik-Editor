@@ -13,6 +13,11 @@ public class RechteckRund extends Rechteck {
         this.bogenHoehe = bogenHoehe;
     }
 
+    public RechteckRund(Point ersterPunkt, Point zweiterPunkt){
+        super(ersterPunkt,zweiterPunkt);
+
+    }
+
     public int getBogenBreite() {
         return bogenBreite;
     }

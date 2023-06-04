@@ -26,12 +26,6 @@ final class EditorControl {
 
     public void erzeugeFigurMitZweitemPunkt(Point zweiterPunkt) {
 
-        if(zweiterPunkt.x < ersterPunkt.x){
-            Point temp = ersterPunkt;
-            ersterPunkt = zweiterPunkt;
-            zweiterPunkt = temp;
-        }
-
 
 
         switch (figurTyp) {
@@ -48,5 +42,9 @@ final class EditorControl {
                 zeichnung.hinzufuegen(new Linie(ersterPunkt, zweiterPunkt));
                 break;
         }
+    }
+
+    public void allesLoeschen(){
+        zeichnung.allesLoeschen();
     }
 }

@@ -17,7 +17,7 @@ final class EditorPanel extends JPanel {
         this.editorControl = editorControl;
         addMouseListener(new MouseAdapter(editorControl,this));
         setFocusable(true);
-        addKeyListener(new KeyAdapter(editorControl));
+        addKeyListener(new KeyAdapter(editorControl, this));
 
     }
 

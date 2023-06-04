@@ -20,6 +20,7 @@ public class Text extends Figur{
     }
     @Override
     public void zeichne(Graphics g) {
+        g.setColor(linienFarbe);
         g.drawString(text,positionX,positionY);
     }
 }

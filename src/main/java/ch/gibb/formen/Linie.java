@@ -36,6 +36,7 @@ public class Linie extends Figur {
 
     @Override
     public void zeichne(Graphics g) {
+        g.setColor(linienFarbe);
         g.drawLine(positionX,positionY,endpunktX,endpunktY);
     }
 }

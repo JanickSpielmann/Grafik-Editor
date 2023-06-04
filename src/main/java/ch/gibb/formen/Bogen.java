@@ -52,6 +52,7 @@ public class Bogen extends Figur {
     }
     @Override
     public void zeichne(Graphics g) {
+        g.setColor(linienFarbe);
         g.drawArc(positionX,positionY,breite,hoehe,startWinkel,winkel);
     }
 }

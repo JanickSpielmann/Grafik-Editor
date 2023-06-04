@@ -31,6 +31,7 @@ public class Elipse extends Figur {
     }
     @Override
     public void zeichne(Graphics g) {
+        g.setColor(linienFarbe);
         g.drawOval(positionX,positionY,breite,hoehe);
     }
 }
