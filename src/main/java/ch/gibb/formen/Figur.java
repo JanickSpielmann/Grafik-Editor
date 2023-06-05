@@ -40,52 +40,14 @@ public abstract class Figur {
         this.style = style;
     }
 
-    public int getPositionX() {
-        return positionX;
-    }
-
     public void setPositionX(int positionX) {
         this.positionX = positionX;
-    }
-
-    public int getPositionY() {
-        return positionY;
     }
 
     public void setPositionY(int positionY) {
         this.positionY = positionY;
     }
 
-    public Color getLinienFarbe() {
-        return linienFarbe;
-    }
-
-    public void setLinienFarbe(Color linienFarbe) {
-        this.linienFarbe = linienFarbe;
-    }
-
-    public Color getFuellFarbe() {
-        return fullFarbe;
-    }
-
-    public void setFuellFarbe(Color fuellFarbe) {
-        this.fullFarbe = fuellFarbe;
-    }
-
-    public int getLinienDicke() {
-        return linienDicke;
-    }
-
-    public void setLinienDicke(int linienDicke) {
-        this.linienDicke = linienDicke;
-    }
-
-    public int getStyle() {
-        return style;
-    }
-    public void setStyle(int style) {
-        this.style = style;
-    }
     public abstract void zeichne(Graphics g);
 }
 

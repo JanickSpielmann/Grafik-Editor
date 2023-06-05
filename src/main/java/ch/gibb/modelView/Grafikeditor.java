@@ -2,7 +2,7 @@ package ch.gibb.modelView;
 
 public final class Grafikeditor {
 
-    EditorFrame editorFrame;
+    private EditorFrame editorFrame;
     public Grafikeditor() {
       this.editorFrame = new EditorFrame(800,600);
     }

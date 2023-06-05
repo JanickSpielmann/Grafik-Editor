@@ -42,23 +42,6 @@ public class Rechteck extends Figur {
             setPositionY(zweiterPunkt.y);
         }
     }
-
-    public int getBreite() {
-        return breite;
-    }
-
-    public void setBreite(int breite) {
-        this.breite = breite;
-    }
-
-    public int getHoehe() {
-        return hoehe;
-    }
-
-    public void setHoehe(int hoehe) {
-        this.hoehe = hoehe;
-    }
-
     @Override
     public void zeichne(Graphics g) {
         g.setColor(linienFarbe);

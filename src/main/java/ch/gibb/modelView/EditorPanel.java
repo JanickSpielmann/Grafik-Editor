@@ -13,7 +13,7 @@ import javax.swing.text.JTextComponent;
 final class EditorPanel extends JPanel {
     private EditorControl editorControl;
 
-    EditorPanel(EditorControl editorControl) {
+    public EditorPanel(EditorControl editorControl) {
         this.editorControl = editorControl;
         addMouseListener(new MouseAdapter(editorControl,this));
         setFocusable(true);
