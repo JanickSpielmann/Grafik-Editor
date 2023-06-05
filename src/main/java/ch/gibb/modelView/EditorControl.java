@@ -7,10 +7,11 @@ import ch.gibb.formen.Rechteck;
 
 import java.awt.*;
 
-final class EditorControl {
+public final class EditorControl {
     private Zeichnung zeichnung = new Zeichnung();
     private char figurTyp;
     private Point ersterPunkt;
+
 
     public void allesNeuZeichnen(Graphics g) {
         zeichnung.zeichneFiguren(g);
@@ -47,4 +48,5 @@ final class EditorControl {
     public void allesLoeschen(){
         zeichnung.allesLoeschen();
     }
+
 }

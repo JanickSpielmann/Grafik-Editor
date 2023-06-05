@@ -4,7 +4,7 @@ public final class Grafikeditor {
 
     EditorFrame editorFrame;
     public Grafikeditor() {
-      this.editorFrame = new EditorFrame(1200,900);
+      this.editorFrame = new EditorFrame(800,600);
     }
 
     public static void main(String[] args) {

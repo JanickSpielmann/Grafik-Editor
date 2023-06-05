@@ -83,7 +83,6 @@ public abstract class Figur {
     public int getStyle() {
         return style;
     }
-
     public void setStyle(int style) {
         this.style = style;
     }
