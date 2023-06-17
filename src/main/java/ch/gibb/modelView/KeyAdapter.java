@@ -1,6 +1,7 @@
 package ch.gibb.modelView;
 
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 
 public class KeyAdapter extends java.awt.event.KeyAdapter {
 
@@ -18,8 +19,23 @@ public class KeyAdapter extends java.awt.event.KeyAdapter {
         if(e.getKeyCode() == KeyEvent.VK_DELETE ){
             editorControl.allesLoeschen();
             editorPanel.repaint();
+        } else if (e.getKeyChar() == 's') {
+            try {
+                editorControl.speichern();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        } else if(e.getKeyChar() == 'g'){
+            try {
+                editorControl.laden();
+                editorPanel.repaint();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
         }
-        editorControl.setFigurTyp(e.getKeyChar());
+        else {
+            editorControl.setFigurTyp(e.getKeyChar());
+        }
         System.out.println(e.getKeyChar());
     }
 }

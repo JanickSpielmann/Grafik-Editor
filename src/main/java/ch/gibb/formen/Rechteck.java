@@ -1,12 +1,21 @@
 package ch.gibb.formen;
 
+
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
 import java.awt.*;
 
-public class Rechteck extends Figur {
+@JsonTypeName("Rechteck")
+public class Rechteck extends Figur{
 
 
     protected int breite;
     protected int hoehe;
+
+
+    public Rechteck(){
+        super();
+    }
 
 
     public Rechteck(Point ersterPunkt, Point zweiterPunkt) {
@@ -33,6 +42,22 @@ public class Rechteck extends Figur {
         this.hoehe = hoehe;
     }
 
+    public int getBreite() {
+        return breite;
+    }
+
+    public void setBreite(int breite) {
+        this.breite = breite;
+    }
+
+    public int getHoehe() {
+        return hoehe;
+    }
+
+    public void setHoehe(int hoehe) {
+        this.hoehe = hoehe;
+    }
+
     private void setStartPoint(Point ersterPunkt, Point zweiterPunkt) {
 
         if (ersterPunkt.x > zweiterPunkt.x)
@@ -44,7 +69,10 @@ public class Rechteck extends Figur {
     }
     @Override
     public void zeichne(Graphics g) {
-        g.setColor(linienFarbe);
         g.drawRect(positionX, positionY, breite, hoehe);
+    }
+    @Override
+    public Figur createFigur() {
+        return new Linie(positionX, positionY, breite, hoehe);
     }
 }

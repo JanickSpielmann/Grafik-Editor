@@ -23,6 +23,14 @@ public class Zeichnung {
         }
     }
 
+    public ArrayList<Figur> getFiguren() {
+        return figuren;
+    }
+
+    public void setFiguren(ArrayList<Figur> figuren) {
+        this.figuren = figuren;
+    }
+
     public void move(int dx, int dy) {
 
     }
@@ -32,7 +40,6 @@ public class Zeichnung {
         figuren.add(figur);
 
     }
-
 
     public void allesLoeschen() {
         figuren.removeAll(figuren);

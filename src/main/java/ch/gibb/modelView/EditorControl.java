@@ -1,11 +1,15 @@
 package ch.gibb.modelView;
 
+import ch.gibb.FigurSaver;
+import ch.gibb.SaveFile;
 import ch.gibb.Zeichnung;
+import ch.gibb.formen.Figur;
 import ch.gibb.formen.Kreis;
 import ch.gibb.formen.Linie;
 import ch.gibb.formen.Rechteck;
 
 import java.awt.*;
+import java.io.IOException;
 
 public final class EditorControl {
     private Zeichnung zeichnung = new Zeichnung();
@@ -49,4 +53,15 @@ public final class EditorControl {
         zeichnung.allesLoeschen();
     }
 
+    public void speichern() throws IOException {
+        FigurSaver.save(zeichnung.getFiguren());
+    }
+    public void laden() throws IOException {
+        SaveFile saveFile = FigurSaver.load();
+
+        for (Figur figur :
+                saveFile.figuren) {
+            zeichnung.hinzufuegen(figur);
+        }
+    }
 }
