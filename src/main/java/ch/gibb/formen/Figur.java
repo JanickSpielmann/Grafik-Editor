@@ -7,6 +7,12 @@ import java.awt.*;
 
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Linie.class, name = "Linie"),
+        @JsonSubTypes.Type(value = Rechteck.class, name = "Rechteck"),
+        @JsonSubTypes.Type(value = Kreis.class, name = "Kreis")
+
+})
 public abstract class Figur {
 
 
