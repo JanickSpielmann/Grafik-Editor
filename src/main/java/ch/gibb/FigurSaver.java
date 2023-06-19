@@ -1,18 +1,11 @@
 package ch.gibb;
 
 import ch.gibb.formen.Figur;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.core.PrettyPrinter;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.jsontype.BasicPolymorphicTypeValidator;
 import com.fasterxml.jackson.databind.jsontype.PolymorphicTypeValidator;
-import com.fasterxml.jackson.databind.type.ArrayType;
-
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
