@@ -63,6 +63,13 @@ public abstract class Figur {
 
     public abstract Figur createFigur();
 
+    @Override
+    public String toString() {
+        return "Figur{" +
+                "positionX=" + positionX +
+                ", positionY=" + positionY +
+                '}';
+    }
 }
 
 

@@ -1,4 +1,4 @@
-package ch.gibb;
+package ch.gibb.save;
 
 import ch.gibb.formen.Figur;
 import java.util.ArrayList;

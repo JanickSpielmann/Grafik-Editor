@@ -16,7 +16,7 @@ public class KeyAdapter extends java.awt.event.KeyAdapter {
     @Override
     public void keyPressed(KeyEvent e) {
         super.keyPressed(e);
-        if(e.getKeyCode() == KeyEvent.VK_DELETE ){
+        if (e.getKeyCode() == KeyEvent.VK_DELETE) {
             editorControl.allesLoeschen();
             editorPanel.repaint();
         } else if (e.getKeyChar() == 's') {
@@ -25,15 +25,14 @@ public class KeyAdapter extends java.awt.event.KeyAdapter {
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
-        } else if(e.getKeyChar() == 'g'){
+        } else if (e.getKeyChar() == 'g') {
             try {
                 editorControl.laden();
                 editorPanel.repaint();
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
-        }
-        else {
+        } else {
             editorControl.setFigurTyp(e.getKeyChar());
         }
         System.out.println(e.getKeyChar());

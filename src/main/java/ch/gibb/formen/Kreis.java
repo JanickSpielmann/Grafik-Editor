@@ -44,4 +44,13 @@ public class Kreis extends Figur{
     public Figur createFigur() {
         return new Kreis(positionX, positionY, radius);
     }
+
+    @Override
+    public String toString() {
+        return "Kreis{" +
+                "radius=" + radius +
+                ", positionX=" + positionX +
+                ", positionY=" + positionY +
+                '}';
+    }
 }

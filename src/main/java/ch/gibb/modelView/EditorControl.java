@@ -1,7 +1,7 @@
 package ch.gibb.modelView;
 
-import ch.gibb.FigurSaver;
-import ch.gibb.SaveFile;
+import ch.gibb.save.FigurSaver;
+import ch.gibb.save.SaveFile;
 import ch.gibb.Zeichnung;
 import ch.gibb.formen.Figur;
 import ch.gibb.formen.Kreis;

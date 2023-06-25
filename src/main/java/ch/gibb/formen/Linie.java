@@ -54,4 +54,13 @@ public class Linie extends Figur{
         return new Linie(positionX, positionY, endpunktX, endpunktY);
     }
 
+    @Override
+    public String toString() {
+        return "Linie{" +
+                "endpunktX=" + endpunktX +
+                ", endpunktY=" + endpunktY +
+                ", positionX=" + positionX +
+                ", positionY=" + positionY +
+                '}';
+    }
 }

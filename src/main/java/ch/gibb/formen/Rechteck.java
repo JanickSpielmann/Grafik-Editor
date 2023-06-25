@@ -75,4 +75,14 @@ public class Rechteck extends Figur{
     public Figur createFigur() {
         return new Linie(positionX, positionY, breite, hoehe);
     }
+
+    @Override
+    public String toString() {
+        return "Rechteck{" +
+                "breite=" + breite +
+                ", hoehe=" + hoehe +
+                ", positionX=" + positionX +
+                ", positionY=" + positionY +
+                '}';
+    }
 }
