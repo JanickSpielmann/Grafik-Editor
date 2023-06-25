@@ -1,5 +1,7 @@
-package ch.gibb.modelView;
+package ch.gibb.view;
 
+
+import ch.gibb.control.EditorControl;
 
 import java.awt.event.MouseEvent;
 

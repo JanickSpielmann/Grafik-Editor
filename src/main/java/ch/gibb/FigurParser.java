@@ -1,19 +1,19 @@
 package ch.gibb;
 
-import ch.gibb.formen.*;
+import ch.gibb.model.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FigurParser {
-  private FigurFileDAO dao;
+  private FigurDAO dao;
 
-  public FigurParser(FigurFileDAO dao) {
+  public FigurParser(FigurDAO dao) {
     this.dao = dao;
   }
 
   public List<Figur> parse() {
-    List<Figur> figuren = new ArrayList<Figur>();
+    List<Figur> figuren = new ArrayList<>();
     String[] figurData = dao.readNextFigurData();
     while (figurData != null) {
       String figurTyp = figurData[0];

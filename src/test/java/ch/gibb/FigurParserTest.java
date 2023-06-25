@@ -1,25 +1,22 @@
 package ch.gibb;
 
-import ch.gibb.formen.Figur;
+import ch.gibb.model.Figur;
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
-
-import java.io.File;
 import java.util.List;
-
-
 
 
 public class FigurParserTest {
 
-    private FigurFileDAO dao;
+    private FigurDAO dao;
     private FigurParser fp;
 
     @Before
     public void setup() {
-        dao = new FigurFileDAO(new File("src/main/resources/Figuren.txt"));
+        dao = new FigurDAOStub();
         fp = new FigurParser(dao);
     }
 

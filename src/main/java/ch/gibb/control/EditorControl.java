@@ -1,12 +1,12 @@
-package ch.gibb.modelView;
+package ch.gibb.control;
 
 import ch.gibb.save.FigurSaver;
 import ch.gibb.save.SaveFile;
-import ch.gibb.Zeichnung;
-import ch.gibb.formen.Figur;
-import ch.gibb.formen.Kreis;
-import ch.gibb.formen.Linie;
-import ch.gibb.formen.Rechteck;
+import ch.gibb.model.Zeichnung;
+import ch.gibb.model.Figur;
+import ch.gibb.model.Kreis;
+import ch.gibb.model.Linie;
+import ch.gibb.model.Rechteck;
 
 import java.awt.*;
 import java.io.IOException;

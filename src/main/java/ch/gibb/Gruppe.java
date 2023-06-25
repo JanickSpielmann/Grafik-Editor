@@ -1,6 +1,6 @@
 package ch.gibb;
 
-import ch.gibb.formen.Figur;
+import ch.gibb.model.Figur;
 
 import java.util.ArrayList;
 

@@ -1,12 +1,13 @@
-package ch.gibb.modelView;
+package ch.gibb.view;
 
+
+import ch.gibb.control.EditorControl;
 
 import java.awt.Graphics;
 
 
 
 import javax.swing.JPanel;
-import javax.swing.text.JTextComponent;
 
 
 @SuppressWarnings("serial")

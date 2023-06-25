@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JFileChooser;
 
-public class FigurFileDAO {
+public class FigurFileDAO implements FigurDAO {
     private BufferedReader in;
 
     public FigurFileDAO() {
@@ -23,15 +23,7 @@ public class FigurFileDAO {
         }
     }
 
-    public FigurFileDAO(File file) {
-        try {
-            in = new BufferedReader(new FileReader(file));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-
+    @Override
     public String[] readNextFigurData() {
         if (in != null) {
             try {

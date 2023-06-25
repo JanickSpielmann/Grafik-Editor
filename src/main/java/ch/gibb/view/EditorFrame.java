@@ -1,4 +1,6 @@
-package ch.gibb.modelView;
+package ch.gibb.view;
+
+import ch.gibb.control.EditorControl;
 
 import java.awt.Dimension;
 import java.awt.Rectangle;
@@ -8,7 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-final class EditorFrame extends JFrame {
+public final class EditorFrame extends JFrame {
     private EditorControl editorControl = new EditorControl();
 
     public EditorFrame(int breite, int hoehe) {

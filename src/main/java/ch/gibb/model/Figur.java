@@ -1,4 +1,4 @@
-package ch.gibb.formen;
+package ch.gibb.model;
 
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;

@@ -1,11 +1,9 @@
-package ch.gibb.formen;
+package ch.gibb.model;
 
-import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.awt.*;
-import java.io.Serializable;
+
 @JsonTypeName("Kreis")
 public class Kreis extends Figur{
 

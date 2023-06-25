@@ -1,4 +1,6 @@
-package ch.gibb.modelView;
+package ch.gibb.control;
+
+import ch.gibb.view.EditorFrame;
 
 public final class Grafikeditor {
 
