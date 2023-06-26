@@ -10,7 +10,7 @@ class KreisTest {
     private GraphicsStub g = new GraphicsStub();
     @Test
     void zeichne() {
-        Kreis k = new Kreis(100,200,10);git c
+        Kreis k = new Kreis(100,200,10);
 
         k.zeichne(g);
 
